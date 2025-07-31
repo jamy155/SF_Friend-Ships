@@ -49,22 +49,26 @@ renderedCallback() {
   // Gets the location from the Browser
   // position => {latitude and longitude}
     getLocationFromBrowser() { 
-        navigator.geolocation.getCurrentPosition(position => {
-            this.latitude = position.coords.latitude;
-            this.longitude = position.coords.longitude;
-        }, );
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(position => {
+                this.latitude = position.coords.latitude;
+                this.longitude = position.coords.longitude;
+            });
+        }
     }
 
   // Creates the map markers
 createMapMarkers(boatData) {
-    const newMarkers = boatData.map(boat => {
-        return {
-            location: {
-                Latitude: boat.Geolocation__Latitude__s,
-                Longitude: boat.Geolocation__Longitude__s
-            },
-            title: boat.Name,
-        }});
+    const boatArray = JSON.parse(boatData);
+    const newMarkers = boatArray.map((boat) => {
+      return {
+        location: {
+          Latitude: boat.Geolocation__Latitude__s,
+          Longitude: boat.Geolocation__Longitude__s
+        },
+        title: boat.Name
+      };
+    });
     newMarkers.unshift({
         location: {
             Latitude: this.latitude,
