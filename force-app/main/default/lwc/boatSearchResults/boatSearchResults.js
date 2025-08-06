@@ -33,8 +33,11 @@ export default class BoatSearchResults extends LightningElement {
   messageContext;
 
   // wired getBoats method
+  wiredBoatsResult;
   @wire(getBoats, { boatTypeId: "$boatTypeId" })
-  wiredBoats({ data, error }) {
+  wiredBoats(value) {
+    this.wiredBoatsResult = value;
+    const { data, error } = value;
     if (data) {
       this.boats = data;
       this.columns = BOAT_COLUMNS;
@@ -56,10 +59,11 @@ export default class BoatSearchResults extends LightningElement {
 
   // this public function must refresh the boats asynchronously
   // uses notifyLoading
+  @api
   async refresh() {
     this.isLoading = true;
     this.notifyLoading(this.isLoading);
-    await refreshApex(this.boats);
+    await refreshApex(this.wiredBoatsResult);
     this.isLoading = false;
     this.notifyLoading(this.isLoading);
   }
@@ -101,6 +105,7 @@ export default class BoatSearchResults extends LightningElement {
           })
         );
         this.draftValues = [];
+        return this.refresh();
       })
       .catch((error) => {
         this.dispatchEvent(
@@ -111,16 +116,17 @@ export default class BoatSearchResults extends LightningElement {
           })
         );
       })
-      .finally(() => {
-        this.refresh();
-      });
+      .finally(() => {});
   }
+
   // Check the current value of isLoading before dispatching the doneloading or loading custom event
   notifyLoading(isLoading) {
     if (isLoading) {
       this.dispatchEvent(new CustomEvent("loading"));
+      console.log("dispatchEvent loading");
     } else {
-      this.dispatchEvent(new CustomEvent("doneLoading"));
+      this.dispatchEvent(new CustomEvent("doneloading"));
+      console.log("dispatchEvent doneLoading");
     }
   }
 }
