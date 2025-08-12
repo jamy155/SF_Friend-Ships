@@ -20,6 +20,8 @@ import BOAT_NAME_FIELD from "@salesforce/schema/Boat__c.Name";
 
 import { getRecord, getFieldValue } from "lightning/uiRecordApi";
 
+import { NavigationMixin } from "lightning/navigation";
+
 // import BOATMC from the message channel
 import BOATMC from "@salesforce/messageChannel/BoatMessageChannel__c";
 import {
