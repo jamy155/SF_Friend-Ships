@@ -14,7 +14,7 @@
         datasource="Type,Price,Length"
       />
             <objects>
-                <object>Boat__C</object>
+                <object>Boat__c</object>
             </objects>
         </targetConfig>
     </targetConfigs>
