@@ -1,18 +1,43 @@
-# Salesforce DX Project: Next Steps
+# SF_Friend-Ships ⛵
+![Friend Ships](Snapshots/img1.png)
+This app simulates a boat-sharing program where administrators can view boats, add new ones, and rate them — all through a sleek, custom Lightning experience.
 
-Now that you’ve created a Salesforce DX project, what’s next? Here are some documentation resources to get you started.
+##### This Project highlights all the following Fundamentals 🛠️ :
 
-## How Do You Plan to Deploy Your Changes?
+- Salesforce Lightning Web Components (LWC)
+- Apex (Server-side logic)
+- Lightning Data Service
+- Salesforce DX (SFDX)
+- JavaScript, HTML, and CSS
 
-Do you want to deploy a set of changes, or create a self-contained application? Choose a [development model](https://developer.salesforce.com/tools/vscode/en/user-guide/development-models).
+## Features ✨
 
-## Configure Your Salesforce DX Project
+- ### Boat Management 📊
+  ![Friend Ships](Snapshots/img2.png)
+  - View available boats.
+  - Add new boats with details like type, name, and description.
+  - Rate boats based on user experience.
 
-The `sfdx-project.json` file contains useful configuration information for your project. See [Salesforce DX Project Configuration](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_ws_config.htm) in the _Salesforce DX Developer Guide_ for details about this file.
+- ### Filtering & Search 🔍
+  ![Friend Ships](Snapshots/img5.png)
+  - Filter boats by type (e.g., Sailboat, Yacht, Motorboat).
+  - Quickly locate boats through search functionality.
 
-## Read All About It
+- ### Ratings ⭐
+  ![Friend Ships](Snapshots/img6.png)
+  - Rate boats directly in the UI.
+  - View average ratings for each boat.
 
-- [Salesforce Extensions Documentation](https://developer.salesforce.com/tools/vscode/)
-- [Salesforce CLI Setup Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_setup.meta/sfdx_setup/sfdx_setup_intro.htm)
-- [Salesforce DX Developer Guide](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_intro.htm)
-- [Salesforce CLI Command Reference](https://developer.salesforce.com/docs/atlas.en-us.sfdx_cli_reference.meta/sfdx_cli_reference/cli_reference.htm)
+- ### Built with LWCs ⚡
+  ![Friend Ships](Snapshots/img7.png)
+  - Utilizes Lightning Data Service for CRUD operations.
+  - Custom events for component communication.
+ 
+## Impact🌍 
+
+Organizations can leverage this app as a template for similar use cases where objects need to be:
+  - Listed, Filtered, and Rated — useful for asset management, equipment rentals, property listings, and more.
+  - Centrally Managed — admins maintain full control over records in Salesforce.
+  - Extended Easily — additional features like booking, scheduling, or custom workflows can be added.
+
+
